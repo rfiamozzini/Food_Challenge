@@ -3,6 +3,10 @@
   padding-bottom: 40px;
 }
 
+p {
+  color: #777;
+}
+
 .lamina-1 {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/098/884/original/pexels-karolina-grabowska-6659609.jpg?1696354668");
   width: 100%;
@@ -10,6 +14,10 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
+}
+
+.align-items-center {
+  align-items: center;
 }
 
 .lamina-3 {
@@ -85,7 +93,10 @@
   font-size: 24px;
 }
 
-.lamina-4 {
+.rice-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lamina-4 .column {
