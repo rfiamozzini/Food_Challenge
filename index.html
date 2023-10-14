@@ -4,17 +4,256 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Risotto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- Styles -->
+    <style>
+      body {
+        font-family: "Lato", sans-serif !important;
+        color: #282828;
+      }
+
+      .lamina-base {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      p {
+        color: #777;
+      }
+
+      .lamina-1 {
+        background-image: url("https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80");
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-color: #fff;
+        z-index: 1;
+        text-align: center;
+        padding: 12px 0 0 0;
+      }
+
+      .lamina-1 .title {
+        font-size: 96px;
+        font-family: "Caveat";
+        padding: 0;
+      }
+
+      .lamina-2 .title {
+        margin-bottom: 12px;
+      }
+
+      .lamina-4 .title {
+        margin-bottom: 32px;
+      }
+
+      .align-items-center {
+        align-items: center;
+      }
+
+      .lamina-3 {
+        position: relative;
+        min-height: 600px;
+      }
+
+      .lamina-3-container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .lamina3-bg-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .lamina3-bg-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 2;
+      }
+
+      .lamina3-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("https://www.thespruceeats.com/thmb/xO3c5v4AhIWkqCq0TEgdbSGLgXw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/risotto-recipe-for-beginners-996008-step-01-bc1c3d806f0842c484f0534217e4c388.jpg");
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+      }
+
+      .title {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+        letter-spacing: 3px;
+        word-spacing: -1px;
+        line-height: 1.2em;
+        font-size: 64px;
+        font-family: "Satisfy";
+      }
+
+      .title-small {
+        font-size: 52px;
+      }
+
+      .subtitle {
+        margin: 10px;
+        text-align: center;
+        margin: 0;
+        letter-spacing: 3px;
+        word-spacing: -1px;
+        line-height: 1.2em;
+      }
+
+      .lamina-1 .subtitle {
+        font-family: "Caveat";
+        font-size: 42px;
+      }
+
+      .container-list {
+        background-color: rgba(255, 255, 255, 0.65);
+        margin: 0 auto;
+        padding: 20px 40px;
+        border: 3px solid #ffffffee;
+        border-radius: 3px;
+        font-size: 24px;
+      }
+
+      .risotto-steps-list {
+        margin-top: 12px;
+        margin: 0;
+      }
+
+      .risotto-story-container {
+        margin: 0 auto;
+        max-width: 1600px;
+      }
+
+      .risotto-story-image {
+        background-image: url("https://st2.depositphotos.com/1692343/11198/i/450/depositphotos_111987466-stock-photo-raw-organic-arborio-rice.jpg");
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 0.25rem;
+      }
+
+      .risotto-story-description {
+        padding: 0 32px;
+      }
+
+      .lamina-4 .column {
+        padding-bottom: 24px;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .most-eaten-btn {
+        margin-top: 24px;
+      }
+
+      .most-eaten-card {
+        height: 100%;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        width: 100%;
+        margin: 0;
+        padding: 20px 20px;
+        background: white;
+      }
+
+      @media (max-width: 1600px) {
+        .risotto-story-image {
+          border-top-right-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .lamina-2 {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+
+        .risotto-story-image {
+          height: 300px;
+          border-radius: 0;
+        }
+
+        .risotto-story-description {
+          padding-top: 20px;
+          padding-bottom: 40px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          padding-bottom: 12px;
+        }
+
+        .lamina-3 .title {
+          font-size: 42px;
+          margin-bottom: 12px;
+        }
+
+        .container-list {
+          padding: 16px 12px;
+        }
+
+        .risotto-steps-list {
+          padding-left: 22px;
+          padding-right: 4px;
+        }
+
+        .lamina-4 .title {
+          font-size: 46px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="lamina-base lamina-1">
-      <div class="container">
+      <div class="container hero-container">
         <h1 class="title">Risotto</h1>
         <h2 class="subtitle">"a dish that’s both elegant and comforting"</h2>
       </div>
@@ -108,70 +347,76 @@
     <div class="lamina-base lamina-4">
       <div class="container">
         <h1 class="title">The most-eaten risottos worldwide</h1>
-        <div class="row justify-content-stretch">
-          <div class="column col-md-4">
+        <div class="row justify-content-stretch most-eaten-wrapper">
+          <div class="column col-lg-4">
             <div class="card most-eaten-card">
               <img
                 src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/098/883/original/pexels-lucio-panerai-7636374.jpg?1696354515"
                 class="card-img-top"
-                alt="..."
+                alt="truffle risotto"
               />
               <div class="card-body">
-                <h5 class="card-title">Mushroom Risotto</h5>
-                <p class="card-text">
-                  A classic favorite, mushroom risotto combines the earthy
-                  richness of various mushrooms, such as porcini or cremini,
-                  with the creamy texture of Arborio rice.
-                </p>
+                <div>
+                  <h4 class="card-title">Mushroom Risotto</h4>
+                  <p class="card-text">
+                    A classic favorite, mushroom risotto combines the earthy
+                    richness of various mushrooms, such as porcini or cremini,
+                    with the creamy texture of Arborio rice.
+                  </p>
+                </div>
                 <a
                   href="https://www.simplyrecipes.com/recipes/mushroom_risotto/"
-                  class="btn btn-secondary btn-block"
+                  class="btn btn-secondary btn-block most-eaten-btn"
                   target="_blank"
                   >Recipe</a
                 >
               </div>
             </div>
           </div>
-          <div class="column col-md-4">
+          <div class="column col-lg-4">
             <div class="card most-eaten-card">
               <img
                 src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/099/781/original/Screenshot_2023-10-10_at_14.31.49.png?1696941133"
                 class="card-img-top"
-                alt="..."
+                alt="seafood risotto"
               />
               <div class="card-body">
-                <h5 class="card-title">Seafood Risotto</h5>
-                <p class="card-text">
-                  This variation includes a delectable mix of seafood like
-                  shrimp, clams, mussels, or squid, which infuses the risotto
-                  with a briny, oceanic flavor.
-                </p>
+                <div>
+                  <h4 class="card-title">Seafood Risotto</h4>
+                  <p class="card-text">
+                    This variation includes a delectable mix of seafood like
+                    shrimp, clams, mussels, or squid, which infuses the risotto
+                    with a briny, oceanic flavor.
+                  </p>
+                </div>
                 <a
                   href="https://www.jamieoliver.com/recipes/seafood-recipes/seafood-risotto/"
-                  class="btn btn-secondary btn-block"
+                  class="btn btn-secondary btn-block most-eaten-btn"
                   target="_blank"
                   >Recipe</a
                 >
               </div>
             </div>
           </div>
-          <div class="column col-md-4">
+          <div class="column col-lg-4">
             <div class="card most-eaten-card">
               <img
                 src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/099/780/original/Screenshot_2023-10-10_at_14.30.42.png?1696941058"
                 class="card-img-top"
-                alt="..."
+                alt="risotto alla milanese"
               />
               <div class="card-body">
-                <h5 class="card-title">Risotto alla Milanese</h5>
-                <p class="card-text">
-                  This iconic risotto is flavored with saffron, lending it a
-                  beautiful golden hue and a subtle, aromatic essence. It's
-                  often served as an accompaniment to dishes like osso buco.
-                </p>
+                <div>
+                  <h4 class="card-title">Risotto alla Milanese</h4>
+                  <p class="card-text">
+                    This iconic risotto is flavored with saffron, lending it a
+                    beautiful golden hue and a subtle, aromatic essence. It's
+                    often served as an accompaniment to dishes like osso buco.
+                  </p>
+                </div>
                 <a
                   href="https://www.greatitalianchefs.com/recipes/risotto-alla-milanese-recipe"
-                  class="btn btn-secondary btn-block"
+                  class="btn btn-secondary btn-block most-eaten-btn"
                   target="_blank"
                   >Recipe</a
                 >
